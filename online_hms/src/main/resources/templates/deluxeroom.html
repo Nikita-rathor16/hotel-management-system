@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hotel Details</title>
+    <style>
+      /* Styles for the page layout */
+
+
+      a {
+  box-shadow: inset 0 0 0 0 #54b3d6;
+  color: #d00;
+  margin: 0 -.25rem;
+  padding: 0 .25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+h1:hover{
+  background-color: #54b3d6;
+}
+
+p:hover{
+
+  background-color: coral;
+}
+
+img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+a:hover {
+  box-shadow: inset 100px 0 0 0 #54b3d6;
+  color: white;
+}
+      body {
+        font-family: Arial, sans-serif;
+        margin: 100;
+        padding: 100;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+      }
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 20px;
+      }
+      .hotel-images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-right: -20px;
+        margin-bottom: 20px;
+      }
+      .hotel-image {
+        flex: 0 0 45%;
+        margin-right: 20px;
+        margin-bottom: 20px;
+      }
+      .hotel-image img {
+        width: 100%;
+      }
+      .hotel-details {
+        flex: 1 1 50%;
+      }
+      /* Styles for the hotel information */
+      h1 {
+        margin-top: 0;
+      }
+      p {
+        margin: 10px 0;
+      }
+      .price {
+        font-size: 24px;
+        font-weight: bold;
+        color: #d00;
+        margin: 10px 0;
+      }
+
+      li:hover{
+        background-color: yellow;
+      }
+      .amenities {
+        margin: 10px 0;
+      }
+      .amenities ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .amenities li {
+        margin-right: 20px;
+        margin-bottom: 10px;
+      }
+      .amenities li:before {
+        content: "• ";
+        color: #d00;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 style="text-align: center; border: 3px solid red;">Room Details</h1>
+    </header>
+    <main>
+      <div class="hotel-images" >
+        <div class="hotel-image">
+          <img src="https://th.bing.com/th/id/OIP.6NLV16bzAw5tAwKdmk8JmgHaE8?pid=ImgDet&rs=1" alt="width 50%">
+        </div>
+        <div class="hotel-image">
+          <img src="https://media.istockphoto.com/id/1084656062/photo/interior-of-a-hotel-bathroom.jpg?b=1&s=612x612&w=0&k=20&c=MZRoqEaLTAWPqvTHjLr9_5Hi5rvd31Y5ek_TVsyNOvw=" alt="width 50%">
+        </div>
+        <div class="hotel-image">
+          <img src="https://media.istockphoto.com/id/641448082/photo/beautiful-tropical-beach-front-hotel-resort-with-swimming-pool-sunshine.jpg?s=612x612&w=0&k=20&c=9PyitcP743oS7oGAoSW8iGDjf1goapy40Ol7PcCNv24=" alt="width 50%">
+        </div>
+        <div class="hotel-image">
+          <img src="https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202109231213577823-0432144819ed11ec9ccb0a58a9feac02.jpg?&output-quality=75&downsize=583:388&output-format=jpg0" alt="width 50%">
+        </div>
+      </div>
+      <div class="hotel-details">
+        <h1 >DELUXE</h1>
+        <p>A hotel is an establishment that provides paid lodging on a short-term basis. 
+          Facilities provided inside a hotel room may range from a modest-quality mattress in a small room to large suites with bigger, higher-quality beds, a dresser, a refrigerator and other kitchen facilities, upholstered chairs, a flat screen television, and en-suite bathrooms.</p>
+        <div class="price">₹1500 per night</div>
+        <div class="amenities">
+          <h2>Amenities</h2>
+          <ul>
+            <li>Free Wi-Fi</li>
+            <li>Swimming pool</li>
+            <li>Restaurant</li>
+            <li>Fitness center</li>
+            <li>24-hour front desk</li>
+          </ul>
+        </div>
+        
+        <a href="addguest"><b>Select Room</b></a>
+      </div>
+
+      
+     
+    </main>
+    
+  </body>
+</html>

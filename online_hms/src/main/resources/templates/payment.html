@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Payment Form</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<style>
+
+    *{
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: 'Poppins', sans-serif;
+
+}
+
+ 
+
+body{
+
+    width: 100%;
+
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background-color: azure;
+
+    background-image: url('https://wallpaperaccess.com/full/4597140.jpg');
+
+}
+
+ 
+
+.container{
+
+    width: 750px;
+
+    height: 500px;
+
+    border: 1px solid;
+
+    background-color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 40px;
+
+    justify-content:space-around;
+
+}
+
+ 
+
+.container h1{
+
+    text-align: center;
+
+}
+
+ 
+
+.first-row{
+
+     display: flex;
+
+}
+
+ 
+
+.owner{
+
+    width: 100%;
+
+    margin-right: 40px;
+
+}
+
+ 
+
+.input-field{
+
+    border: 1px solid #999;
+
+}
+
+ 
+
+.input-field input{
+
+    width: 100%;
+
+    border:none;
+
+    outline: none;
+
+    padding: 10px;
+
+}
+
+#btnn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid black;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+#btnn:hover {
+  background-color: #45a049;
+}
+ 
+
+.selection{
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+ 
+
+.selection select{
+
+    padding: 10px 20px;
+
+}
+
+ 
+
+button{
+
+    background-color: blueviolet;
+
+    color: white;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    padding: 10px;
+
+    font-size: 18px;
+
+    transition: 0.5s;
+
+}
+
+ 
+
+button:hover{
+
+    background-color: dodgerblue;
+
+}
+
+ 
+
+.cards img{
+
+    width: 100px;
+
+}
+
+</style>
+
+
+<body>
+
+    
+    <form action="/payment" method="post">
+       
+    <div class="container">
+
+        <h1>Confirm Your Payment</h1>
+
+        <div class="first-row">
+
+            <div class="owner">
+
+                <h3>Card Holder Name</h3>
+
+                <div class="input-field">
+
+                    <input type="text" name="card_holder_name" required >
+
+                </div>
+
+            </div>
+
+            <div class="cvv">
+
+                <h3>CVV</h3>
+
+                <div class="input-field">
+
+                    <input type="password" name="cvv" pattern="[1-9]{3}" required>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="second-row">
+
+            <div class="card-number">
+
+                <h3>Card Number</h3>
+
+                <div class="input-field" style="color: green;">
+
+                    <input type="text" pattern="[0-9]{16}" name="card_number" required>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="third-row">
+
+            <h3>Expiry Date</h3>
+
+            
+<!-- <input  type="text" name="expiry_date" placeholder="mm/yy" style="width: auto;"/   > -->
+<input type="date" id="expire_date" name="expire_date"
+      required  />
+
+           
+
+                </div>
+
+                <div class="forth-row">
+
+                    <div class="total">
+
+                        <h3>Total</h3>
+
+                        
+
+                           <div th:text="${calculatedprice}"style="color: red; font-weight: bold;"/>
+        
+   
+
+                      
+                        
+    
+    
+
+                    </div>
+
+                </div>
+
+                 <div class="cards">
+
+                    <img src="https://e7.pngegg.com/pngimages/415/124/png-clipart-mastercard-visa-bank-card-payment-mastercard-text-service.png" alt="">
+
+                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6eymWzJdMMa0ZkHCQENEygGeJag9aL3snYg&usqp=CAU" alt="">
+
+                    <img src="pp.png" alt="">
+
+                </div> 
+
+            </div>    
+
+        </div>
+        
+        <h1></h1>
+
+        <button  onclick="alert('Please confirm your payment!');" type="submit" >Confirm</button>
+        <a href=" abc" id="btnn" class="btn btn-danger">Logout</a>
+    </div>
+   
+   
+
+</form>
+
+
+</body>
+
+</html>

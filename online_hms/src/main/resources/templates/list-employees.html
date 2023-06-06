@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Rooms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+
+<style>
+body {
+  height: 100vh;
+   background: linear-gradient(90deg,#e52e71,#ff8a00);
+
+}
+
+.slider-thumb::before {
+  position: absolute;
+  content: "";
+  left: 30%;
+  top: 20%;
+  width: 450px;
+  height: 450px;
+  background: #17141d;
+  border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
+  will-change: border-radius, transform, opacity;
+  animation: sliderShape 5s linear infinite;
+  display: block;
+  z-index: -1;
+  -webkit-animation: sliderShape 5s linear infinite;
+}
+@keyframes sliderShape{
+  0%,100%{
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  34%{
+      border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+    transform:  translate3d(0,5px,0) rotateZ(0.01deg);
+  }
+  50%{
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  67%{
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
+    transform: translate3d(0,-3px,0) rotateZ(0.01deg);
+  }
+}
+</style>
+
+<body>
+<div class="slider-thumb"></div>
+<div> <a href="abc" id="btnn" class="btn btn-success">Logout</a></div>
+    <div class="container my-2" style="background-color:aqua ;">
+    <div class="card">
+    <div class="card-body" style="background-color: cornsilk;" >
+        <div th:switch="${employees}" class="container my-5">
+            <p class="my-5">
+                <a href="/edit" class="btn btn-primary">
+                <i class="fas fa-user-plus ml-2"> Add Rooms </i></a>
+            </p>
+            <div class="col-md-10">
+                <h2 th:case="null">No record found !!</h2>
+                <div th:case="*">
+                    <table class="table table-striped table-responsive-md">
+                        <thead>
+                            <tr>
+                                <th>Room_id</th>
+                                <th>Room_type</th>
+                                <th>Price</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="employee : ${employees}">
+                                <td th:text="${employee.room_id}"></td>
+                                <td th:text="${employee.roomtype}"></td>
+                                <td th:text="${employee.price}"></td>
+                                
+                                <td>
+                                    <a  onclick="alert('Are You Sure Want To Update!');" th:href="@{/edit/{id}(id=${employee.id})}" class="btn btn-primary">
+                                        <i class="fas fa-user-edit ml-2"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a     onclick="alert('Are You Sure Want To Delete!');"  th:href="@{/delete/{id}(id=${employee.id})}" class="btn btn-primary">
+                                        <i class="fas fa-user-times ml-2"></i>
+                                    </a>
+                                </td>
+                               
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>

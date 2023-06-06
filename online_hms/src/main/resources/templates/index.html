@@ -1,0 +1,310 @@
+<!-- <!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="registrationstyle.css">
+<title>Document</title>
+</head>
+
+<body>
+
+
+	 <div class="container" style="background-color: cadetblue;">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form id="my-form" name="myform" action="register" method="post">
+        <div class="user-details">
+        
+        
+          <div class="input-box">
+            <span class="details">Name</span>
+            <input type="text" placeholder="Enter your name"  name="name">
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" pattern="[6789][0-9]{9}" required name="phonenumber">
+          </div>
+          
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" required name="email">
+          </div>
+         
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" placeholder="Enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required name="password">
+          </div>
+        
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" placeholder="Enter your address" required name="address">
+          </div>
+          <div class="input-box">
+            <span class="details">City</span>
+            <input type="text" placeholder="Enter your city" required name="city">
+          </div>
+          <div class="input-box">
+            <span class="details">State</span>
+            <input type="text" placeholder="Enter your state" required name="state">
+          </div>
+          <div class="input-box">
+            <span class="details">Country</span>
+            <input type="text" placeholder="Enter your country" required name="country">
+          </div>
+          
+        </div>
+        
+        <div class="button">
+          <input type="submit"  value="Submit">
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="message" style="color:red;"></div>
+  <script src="test.js"></script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+input{
+
+      text-align: center;
+    }
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+ body 
+{
+  font-family:sans-serif; 
+  color:rgb(192, 185, 185);
+  background-image: url("https://assets.architecturaldigest.in/photos/634faddd72a1a5e24d40b934/16:9/w_1615,h_908,c_limit/Atmantan-Mango%20Tree%20Villa.png");
+}
+.container{
+  max-width: 700px;
+  width: 40%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, rgb(128, 255, 255), #9b59b6);
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #9b59b6;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+
+</style>
+<body>
+
+	 <div class="container" style="background-color: rgb(43, 40, 40);">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form id="my-form" name="myform" action="register" method="post">
+        <div class="user-details">
+        
+        
+          <div class="input-box">
+            <span class="details">Name</span>
+            <input type="text" name="name">
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="tel" pattern="[6789][0-9]{9}" required name="phonenumber">
+          </div>
+          
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" required name="email">
+          </div>
+         
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required name="password">
+          </div>
+        
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" required name="address">
+          </div>
+          <div class="input-box">
+            <span class="details">City</span>
+            <input type="text" required name="city">
+          </div>
+          <div class="input-box">
+            <span class="details">State</span>
+            <input type="text" required name="state">
+          </div>
+          <div class="input-box">
+            <span class="details">Country</span>
+            <input type="text" required name="country">
+          </div>
+          
+        </div>
+        
+        <div class="button">
+          <input type="submit"  value="Submit">
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="message" style="color:red;"></div>
+  <script src="test.js"></script>
+</body>
+</html>
